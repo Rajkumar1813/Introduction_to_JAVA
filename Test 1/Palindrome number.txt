@@ -1,0 +1,70 @@
+Check whether a given number ’n’ is a palindrome number.
+
+
+Palindrome numbers are the numbers that don't change when reversed.
+
+
+Return boolean value true or false.
+
+
+Note:
+You don’t need to print anything. Just implement the given function.
+Example:
+Input: 'n' = 51415
+Output: true
+Explanation: On reversing, 51415 gives 51415.
+Input Format:
+The first and only line of the input contains the number 'n'.
+Output format:
+Return a boolean value True or False.
+Sample Input 1 :
+1032
+Sample Output 1 :
+false
+Explanation Of Sample Input 1:
+1032, on being reversed, gives 2301, which is a totally different number.
+Sample Input 2 :
+121
+Sample Output 2 :
+true
+Explanation Of Sample Input 2:
+121, on being reversed, gives 121, which is the same.
+Expected time complexity:
+The expected time complexity is O(log(n)).
+Constraints :
+1 <= n <= 10^9
+Time Limit: 1 sec
+
+
+
+
+Solution ===>
+
+
+import java.util.Scanner;
+public class Main{
+
+	public static boolean checkPalindrome(String str){
+		/* Your class should be named Solution
+		* Don't write main().
+		* Don't read input, it is passed as function argument.
+		* Return output and don't print it.
+		* Taking input and printing output is handled automatically.
+		*/
+        boolean isPalindrome = true;
+		for(int i = 0,j = str.length() - 1;i < (str.length()/2);i++,j--){
+		if(str.charAt(i) != str.charAt(j)){
+		isPalindrome = false;
+		break;
+		}
+		}
+		return isPalindrome;
+		}
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		String str = s.nextLine();
+		boolean isPalindrome = checkPalindrome(str);
+		System.out.print(isPalindrome);
+    }
+}
